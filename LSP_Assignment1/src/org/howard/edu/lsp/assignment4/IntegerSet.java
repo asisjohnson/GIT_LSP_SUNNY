@@ -7,6 +7,7 @@ package org.howard.edu.lsp.assignment4;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.howard.edu.lsp.assignment4.IntegerSetException;
 
 /**
  * Represents a set of integers.
@@ -74,8 +75,11 @@ public class IntegerSet {
      * @return The largest element in the set.
      * @throws NoSuchElementException if the set is empty.
      */
-    public int largest() {
-        if (set.isEmpty())
+    public int largest() throws IntegerSetException {
+    	if (set.isEmpty()) {
+            throw new IntegerSetException("Cannot find largest element in an empty set.");
+        }
+    	if (set.isEmpty())
             return Integer.MIN_VALUE;
         int max = set.get(0);
         for (int num : set) {
@@ -90,8 +94,11 @@ public class IntegerSet {
      * @return The smallest element in the set.
      * @throws NoSuchElementException if the set is empty.
      */
-    public int smallest() {
-        if (set.isEmpty())
+    public int smallest() throws IntegerSetException {
+    	if (set.isEmpty()) {
+            throw new IntegerSetException("Cannot find smallest element in an empty set.");
+        }
+    	if (set.isEmpty())
             return Integer.MAX_VALUE;
         int min = set.get(0);
         for (int num : set) {
