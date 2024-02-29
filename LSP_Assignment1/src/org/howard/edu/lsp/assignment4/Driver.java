@@ -53,5 +53,7 @@ public class Driver {
         
         set3.clear();
         System.out.println("Clear Set 3: " + set3.toString());
+        
+        System.out.println("Check smallest in empty Set 3: " + set3.smallest());
     }
 }
